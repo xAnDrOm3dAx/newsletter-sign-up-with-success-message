@@ -23,7 +23,33 @@
   --max-width-desktop: 1440px;
 }
 
+body {
+ font-family: var(--regular-font-family);
+ display: flex;
+ flex-direction: column;
 
+ align-items: center;
+}
+
+.article-container {
+  max-width: var(--max-width-mobile);
+
+  @media (max-width: 768px) {
+    max-width: var(--max-width-desktop);
+  }
+}
+
+.main-article-wrapper {
+
+}
+
+.success-message-wrapper {
+  
+}
+
+.hidden {
+  display: none;
+}
 
 .attribution { 
   font-size: 11px; text-align: center; 
