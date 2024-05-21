@@ -18,43 +18,132 @@
   --dark-slate-grey: hsl(234, 29%, 20%);
   --charcoal-grey: hsl(235, 18%, 26%);
   --grey: hsl(231, 7%, 60%);
-  --white: White: hsl(0, 0%, 100%);
+  --white: hsl(0, 0%, 100%);
   --max-width-mobile: 375px;
   --max-width-desktop: 1440px;
 }
 
 body {
- font-family: var(--regular-font-family);
- display: flex;
- flex-direction: column;
+  font-family: var(--regular-font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 
- align-items: center;
+p {
+  font-size: var(--primary-font-size);
 }
 
 .article-container {
   max-width: var(--max-width-mobile);
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     max-width: var(--max-width-desktop);
   }
 }
 
-.main-article-wrapper {
+.article-wrapper {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 
+  & header {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    & h1 {
+      font-family: var(--bold-font-family);
+      font-size: 2.4rem;
+    }
+  }
+
+  .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .p-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    & svg {
+      max-width: 18px;
+      min-width: 18px;
+      height: auto;
+    }
+  }
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .form-row-1 {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: -10px;
+
+      & label,
+      p {
+        font-size: 12px;
+        font-family: var(--bold-font-family)
+      }
+
+      & p {
+        color: var(--tomato);
+        /* display: none; */
+      }
+    }
+
+    & input {
+      border-radius: 6px;
+      padding: 16px;
+      border: 1px solid var(--grey);
+      font-size: 12px;
+    }
+
+    & input::placeholder {
+      color: var(--grey);
+    }
+
+    & input:focus {
+      outline: 1px solid var(--dark-slate-grey);
+    }
+
+    & button {
+      border-radius: 6px;
+      padding: 16px;
+      border: 1px solid var(--gray);
+      background-color: var(--dark-slate-grey);
+      color: var(--white);
+      font-size: 12px;
+    }
+  }
 }
 
-.success-message-wrapper {
-  
-}
+
+
+
+.success-message-wrapper {}
 
 .hidden {
   display: none;
 }
 
-.attribution { 
-  font-size: 11px; text-align: center; 
-}
 
-.attribution a { 
-  color: hsl(228, 45%, 44%); 
+footer {
+  p {
+    font-size: 11px;
+    text-align: center;
+    margin: 0 32px;
+
+    & a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
 }
