@@ -20,32 +20,63 @@
   --grey: hsl(231, 7%, 60%);
   --white: hsl(0, 0%, 100%);
   --max-width-mobile: 375px;
-  --max-width-desktop: 1440px;
+  --max-width-desktop: 880px;
 }
 
 body {
   font-family: var(--regular-font-family);
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
+}
+
+h1 {
+  font-family: var(--bold-font-family);
+  font-size: 2.4rem;
 }
 
 p {
   font-size: var(--primary-font-size);
 }
 
+button {
+  border-radius: 6px;
+  padding: 16px;
+  border: 1px solid var(--gray);
+  background-color: var(--dark-slate-grey);
+  color: var(--white);
+  font-size: var(--primary-font-size);
+}
+
 .article-container {
-  /* max-width: var(--max-width-mobile); */
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: 768px) {
+    flex-direction: row;
+    padding: 16px;
     max-width: var(--max-width-desktop);
+    margin: 0 auto;
   }
 }
 
-figure {
+.image-wrapper-mobile {
   & img {
     width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.image-wrapper-desktop {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+    order: 2;
   }
 }
 
@@ -55,15 +86,14 @@ figure {
   flex-direction: column;
   gap: 32px;
 
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+
   & header {
     display: flex;
     flex-direction: column;
     gap: 32px;
-
-    & h1 {
-      font-family: var(--bold-font-family);
-      font-size: 2.4rem;
-    }
   }
 
   .text-wrapper {
@@ -120,27 +150,8 @@ figure {
     & input:focus {
       outline: 1px solid var(--dark-slate-grey);
     }
-
-    & button {
-      border-radius: 6px;
-      padding: 16px;
-      border: 1px solid var(--gray);
-      background-color: var(--dark-slate-grey);
-      color: var(--white);
-      font-size: var(--primary-font-size);
-    }
   }
 }
-
-
-
-
-.success-message-wrapper {}
-
-.hidden {
-  display: none;
-}
-
 
 footer {
   margin-bottom: 32px;
@@ -154,4 +165,11 @@ footer {
       color: hsl(228, 45%, 44%);
     }
   }
+}
+
+
+
+
+.hidden {
+  display: none;
 }
