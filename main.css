@@ -96,7 +96,7 @@ p {
 
       & p {
         color: var(--tomato);
-        /* display: none; */
+        display: none;
       }
     }
 
@@ -104,7 +104,7 @@ p {
       border-radius: 6px;
       padding: 16px;
       border: 1px solid var(--grey);
-      font-size: 12px;
+      font-size: var(--primary-font-size);
     }
 
     & input::placeholder {
@@ -121,7 +121,7 @@ p {
       border: 1px solid var(--gray);
       background-color: var(--dark-slate-grey);
       color: var(--white);
-      font-size: 12px;
+      font-size: var(--primary-font-size);
     }
   }
 }
