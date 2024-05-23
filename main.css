@@ -170,7 +170,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 40px;
   max-width: var(--max-width-mobile);
   height: 100vh;
   gap: 30px;
