@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="css-reset.css">
@@ -62,10 +61,10 @@
           </div>
         </div>
 
-        <form>
+        <form novalidate>
           <div class="form-row-1">
             <label for="user-email">Email Address</label>
-            <p>Valid Email Required</p>
+            <p id="error-message">Valid Email Required</p>
           </div>
           <input type="email" id="user-email" name="email" placeholder="email@company.com">
           <button type="submit" id="submit-btn">Subscribe to monthly newsletter</button>
@@ -75,7 +74,7 @@
     <!-- Sign-up form end -->
 
     <!-- Success message start -->
-    <section class="success-message-wrapper-mobile ">
+    <section class="success-message-wrapper hidden">
       <div>
         <div class="success-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
@@ -98,36 +97,9 @@
       </div>
 
       <div>
-        <button>Dismiss message</button>
+        <button id="dismiss-btn">Dismiss message</button>
       </div>
     </section>
-
-    <!-- <section class="success-message-wrapper-desktop hidden">
-      <div>
-        <div class="success-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-            <defs>
-              <linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%">
-                <stop offset="0%" stop-color="#FF6A3A" />
-                <stop offset="100%" stop-color="#FF527B" />
-              </linearGradient>
-            </defs>
-            <g fill="none">
-              <circle cx="32" cy="32" r="32" fill="url(#a)" />
-              <path stroke="#FFF" stroke-width="4" d="m18.286 34.686 8.334 7.98 19.094-18.285" />
-            </g>
-          </svg>
-        </div>
-        <h1>Thanks for subscribing!</h1>
-
-        <p>A confirmation email has been sent to <span>ash@loremcompany.com.</span>
-          Please open it and click the button inside to confirm your subscription.</p>
-      </div>
-
-      <div>
-        <button>Dismiss message</button>
-      </div>
-    </section> -->
     <!-- Success message end -->
 
     <footer class="attribution">

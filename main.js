@@ -1,24 +1,48 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("form");
-  const emailInput = document.querySelector("#user-email");
-  const articleContainer = document.querySelector(".article-container");
-  const successMessageWrapper = document.querySelector(".success-message-wrapper");
-  const dismissButton = successMessageWrapper.querySelector("button");
+const form = document.querySelector("form");
+const submitBtn = document.querySelector("#submit-btn");
+const dismissBtn = document.querySelector("#dismiss-btn");
+const errorMessage = document.querySelector("#error-message");
+const emailInput = document.querySelector("#user-email");
+const successMessage = document.querySelector(".success-message-wrapper");
+const articleContainer = document.querySelector(".article-container");
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (emailInput.value === "") {
-      // Add your email validation logic here
-      emailInput.classList.add("error");
-      return;
-    }
-    articleContainer.classList.add("hidden");
-    successMessageWrapper.classList.remove("hidden");
-  });
-
-  dismissButton.addEventListener("click", () => {
-    successMessageWrapper.classList.add("hidden");
-    articleContainer.classList.remove("hidden");
-    emailInput.value = "";
-  });
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  validateEmail();
 });
+
+dismissBtn.addEventListener("click", () => {
+  removeSuccessMessage();
+});
+
+function validateEmail() {
+  const userEmail = emailInput.value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (emailInput.value === "" || !emailRegex.test(userEmail)) {
+    displayError();
+  } else {
+    DisplaySuccessMessage();
+  }
+
+  clearError();
+}
+
+function displayError() {
+  errorMessage.style.display = "block";
+}
+
+function clearError() {
+  errorMessage.style.display = "none";
+}
+
+function DisplaySuccessMessage() {
+  successMessage.classList.remove("hidden");
+  articleContainer.classList.add("hidden");
+}
+
+function removeSuccessMessage() {
+  successMessage.classList.add("hidden");
+  articleContainer.classList.remove("hidden");
+  emailInput.value = "";
+}
