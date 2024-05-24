@@ -24,8 +24,6 @@ function validateEmail() {
   } else {
     DisplaySuccessMessage();
   }
-
-  clearError();
 }
 
 function displayError() {
@@ -45,4 +43,5 @@ function removeSuccessMessage() {
   successMessage.classList.add("hidden");
   articleContainer.classList.remove("hidden");
   emailInput.value = "";
+  clearError();
 }
