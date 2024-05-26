@@ -183,6 +183,10 @@ button {
   height: 100vh;
   gap: 30px;
 
+  @media (orientation: landscape) {
+    height: 100%;
+  }
+
   @media (min-width: 768px) {
     padding: 40px;
     height: fit-content;
