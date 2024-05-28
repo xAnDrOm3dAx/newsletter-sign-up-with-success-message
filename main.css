@@ -27,7 +27,11 @@ body {
   font-family: var(--regular-font-family);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+
+  @media (min-width: 768px) {
+    align-items: center;
+  }
 }
 
 main {
