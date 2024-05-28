@@ -76,6 +76,7 @@ button {
   justify-content: center;
 
   @media (min-width: 768px) {
+    width: auto;
     flex-direction: row;
     padding: 16px;
     max-width: var(--max-width-desktop);
