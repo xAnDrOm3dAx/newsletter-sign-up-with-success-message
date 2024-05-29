@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://lnkd.in/gDCZ-_Bv]
-- Live Site URL: [https://lnkd.in/gKgJMxHX]
+- Solution URL: https://lnkd.in/gDCZ-_Bv
+- Live Site URL: https://lnkd.in/gKgJMxHX
 
 ### Built with
 
