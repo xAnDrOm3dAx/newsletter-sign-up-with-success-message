@@ -4,7 +4,7 @@ const dismissBtn = document.querySelector("#dismiss-btn");
 const errorMessage = document.querySelector("#error-message");
 const emailInput = document.querySelector("#user-email");
 const successMessage = document.querySelector(".success-message-wrapper");
-const articleContainer = document.querySelector(".article-container");
+const articleContainer = document.querySelector(".signup-form-container");
 const emailConfirmation = document.querySelector("#email-confirmation");
 
 form.addEventListener("submit", (e) => {
